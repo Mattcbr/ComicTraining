@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F571231201B99910095B7EB /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F571230201B99910095B7EB /* CustomObject.m */; };
 		2FF4ED152008E9380038E9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4ED142008E9380038E9C3 /* AppDelegate.swift */; };
 		2FF4ED172008E9380038E9C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4ED162008E9380038E9C3 /* ViewController.swift */; };
 		2FF4ED1A2008E9380038E9C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4ED182008E9380038E9C3 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		29CE63800046B70B0503CB79 /* Pods_Comic_Training.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comic_Training.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F57122F201B99900095B7EB /* Comic Training-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Comic Training-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F571230201B99910095B7EB /* CustomObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomObject.m; sourceTree = "<group>"; };
 		2FF4ED112008E9380038E9C3 /* Comic Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF4ED142008E9380038E9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FF4ED162008E9380038E9C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				2FF4ED1B2008E9380038E9C3 /* Assets.xcassets */,
 				2FF4ED1D2008E9380038E9C3 /* LaunchScreen.storyboard */,
 				2FF4ED202008E9380038E9C3 /* Info.plist */,
+				2F571230201B99910095B7EB /* CustomObject.m */,
+				2F57122F201B99900095B7EB /* Comic Training-Bridging-Header.h */,
 			);
 			path = "Comic Training";
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				TargetAttributes = {
 					2FF4ED102008E9380038E9C3 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					2FF4ED242008E9380038E9C3 = {
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF4ED172008E9380038E9C3 /* ViewController.swift in Sources */,
+				2F571231201B99910095B7EB /* CustomObject.m in Sources */,
 				2FF4ED152008E9380038E9C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,12 +517,15 @@
 			baseConfigurationReference = FFA3EC6207B80291A2685D82 /* Pods-Comic Training.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q5S3JGHHG9;
 				INFOPLIST_FILE = "Comic Training/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ingressorapido.trainning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Comic Training/Comic Training-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -526,12 +536,14 @@
 			baseConfigurationReference = CDB70E4BF25EB4D2D69E7F2F /* Pods-Comic Training.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q5S3JGHHG9;
 				INFOPLIST_FILE = "Comic Training/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ingressorapido.trainning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Comic Training/Comic Training-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
