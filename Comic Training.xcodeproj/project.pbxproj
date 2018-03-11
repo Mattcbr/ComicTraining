@@ -15,6 +15,7 @@
 		2FF4ED1F2008E9380038E9C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4ED1D2008E9380038E9C3 /* LaunchScreen.storyboard */; };
 		2FF4ED2A2008E9380038E9C3 /* Comic_TrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4ED292008E9380038E9C3 /* Comic_TrainingTests.swift */; };
 		2FF4ED352008E9380038E9C3 /* Comic_TrainingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4ED342008E9380038E9C3 /* Comic_TrainingUITests.swift */; };
+		2FFDAB2220374FBD00E6A200 /* heroesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFDAB2120374FBD00E6A200 /* heroesResponse.swift */; };
 		B637CBA7011299108D3B95D6 /* Pods_Comic_Training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CE63800046B70B0503CB79 /* Pods_Comic_Training.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		2FF4ED302008E9380038E9C3 /* Comic TrainingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comic TrainingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF4ED342008E9380038E9C3 /* Comic_TrainingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic_TrainingUITests.swift; sourceTree = "<group>"; };
 		2FF4ED362008E9380038E9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFDAB2120374FBD00E6A200 /* heroesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heroesResponse.swift; sourceTree = "<group>"; };
 		CDB70E4BF25EB4D2D69E7F2F /* Pods-Comic Training.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic Training.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic Training/Pods-Comic Training.release.xcconfig"; sourceTree = "<group>"; };
 		FFA3EC6207B80291A2685D82 /* Pods-Comic Training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic Training.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic Training/Pods-Comic Training.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				2FF4ED202008E9380038E9C3 /* Info.plist */,
 				2F571230201B99910095B7EB /* CustomObject.m */,
 				2F57122F201B99900095B7EB /* Comic Training-Bridging-Header.h */,
+				2FFDAB2120374FBD00E6A200 /* heroesResponse.swift */,
 			);
 			path = "Comic Training";
 			sourceTree = "<group>";
@@ -330,11 +333,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Comic Training/Pods-Comic Training-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFDAB2220374FBD00E6A200 /* heroesResponse.swift in Sources */,
 				2FF4ED172008E9380038E9C3 /* ViewController.swift in Sources */,
 				2F571231201B99910095B7EB /* CustomObject.m in Sources */,
 				2FF4ED152008E9380038E9C3 /* AppDelegate.swift in Sources */,

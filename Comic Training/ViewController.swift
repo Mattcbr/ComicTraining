@@ -8,7 +8,8 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
+//import AlamofireImage
+import AlamofireObjectMapper
 
 class ViewController: UIViewController {
 
@@ -45,13 +46,34 @@ class ViewController: UIViewController {
         let hashHex = hash.map{String(format: "%02hhx", $0)}.joined()
 //        print("hashHex: \(hashHex)")
         
-        Alamofire.request("https://gateway.marvel.com:443/v1/public/characters?limit=20&ts=\(ts)&apikey=49d87eaa6caa8f3b2c167bf0192a975e&hash=\(hashHex)").responseJSON{ response in
+        let requestURL = "https://gateway.marvel.com:443/v1/public/characters?limit=20&ts=\(ts)&apikey=49d87eaa6caa8f3b2c167bf0192a975e&hash=\(hashHex)"
+//        Alamofire.request(requestURL).responseObject{ (response: DataResponse<heroesResponse>) in
+        Alamofire.request(requestURL).responseJSON{ response in
+            switch response.result{
+                case .success(let JSON):
+                    let JSONresponse = JSON as? [String : Any]
+//                    var data: NSDictionary
+                
+//                    let data = JSONresponse.value(forKey: "data") as? [String : Any]
+                    let data = JSONresponse?["data"] as? [String : Any]
+                    let values = data?["results"] as? [[String : Any]]
+                    let names = values?[["name"]] as? [[String : Any]]
+                    
+                    
+//                    let values = data.value(forKey: "results") as! NSDictionary
+//                    let name = values.value(forKey: "name")
+                
+                    print(values)
+                case .failure(let error):
+                    print("Falhou com erro: \(error)")
+            }
+//            var name: String = response["name"]
+//            var myJSON =
             
-//            var name: String = response("name")
 //            print("Nome:\(name)")
-            
-//            debugPrint(response)
+        
             print(response)
+            
         }
     }
     
