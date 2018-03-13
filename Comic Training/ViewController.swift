@@ -47,30 +47,43 @@ class ViewController: UIViewController {
 //        print("hashHex: \(hashHex)")
         
         let requestURL = "https://gateway.marvel.com:443/v1/public/characters?limit=20&ts=\(ts)&apikey=49d87eaa6caa8f3b2c167bf0192a975e&hash=\(hashHex)"
-//        Alamofire.request(requestURL).responseObject{ (response: DataResponse<heroesResponse>) in
         Alamofire.request(requestURL).responseJSON{ response in
             switch response.result{
+                
                 case .success(let JSON):
                     let JSONresponse = JSON as? [String : Any]
-//                    var data: NSDictionary
-                
-//                    let data = JSONresponse.value(forKey: "data") as? [String : Any]
+                    
                     let data = JSONresponse?["data"] as? [String : Any]
                     let values = data?["results"] as? [[String : Any]]
-                    let names = values?[["name"]] as? [[String : Any]]
                     
+                    var nameArray = [String]()
+                    var ThumbArray = [String]()
                     
-//                    let values = data.value(forKey: "results") as! NSDictionary
-//                    let name = values.value(forKey: "name")
+                    let respCount: Int = values!.count
+                    
+                    for i in 0...(respCount-1)
+                    {
+                        //Varre heroi por heroi
+                        let hero = values?[i]
+                        
+                        //Coleta o nome de cada
+                        let name = hero?["name"] as? String
+                        
+                        //Coleta o caminho da imagem de cada
+                        let thumbnail = hero?["thumbnail"] as? [String : Any]
+                        let path = thumbnail?["path"] as? String
+                        let ext = thumbnail?["extension"] as? String
+                        let thumbpath = "\(path!).\(ext!)"
+                        
+                        nameArray.append(name!)
+                        ThumbArray.append(thumbpath)
+                    }
                 
-                    print(values)
+                    print(nameArray)
+                
                 case .failure(let error):
                     print("Falhou com erro: \(error)")
             }
-//            var name: String = response["name"]
-//            var myJSON =
-            
-//            print("Nome:\(name)")
         
             print(response)
             
