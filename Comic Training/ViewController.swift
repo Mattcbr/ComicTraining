@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         let publicKey: String = "49d87eaa6caa8f3b2c167bf0192a975e"
         let privateKey: String = "3beaaf1ec20b7742f099683318556694c67e4ae9"
         
+        
         let tbHash = ts+privateKey+publicKey
         
         let hash = MD5(string: tbHash)
