@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F571231201B99910095B7EB /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F571230201B99910095B7EB /* CustomObject.m */; };
+		2FE7D909208CD706004B0F32 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7D908208CD706004B0F32 /* Request.swift */; };
 		2FF4ED152008E9380038E9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4ED142008E9380038E9C3 /* AppDelegate.swift */; };
 		2FF4ED172008E9380038E9C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4ED162008E9380038E9C3 /* ViewController.swift */; };
 		2FF4ED1A2008E9380038E9C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4ED182008E9380038E9C3 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		29CE63800046B70B0503CB79 /* Pods_Comic_Training.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comic_Training.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F57122F201B99900095B7EB /* Comic Training-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Comic Training-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F571230201B99910095B7EB /* CustomObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomObject.m; sourceTree = "<group>"; };
+		2FE7D908208CD706004B0F32 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2FF4ED112008E9380038E9C3 /* Comic Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF4ED142008E9380038E9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FF4ED162008E9380038E9C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2FE7D907208CD6EE004B0F32 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2FE7D908208CD706004B0F32 /* Request.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		2FF4ED082008E9370038E9C3 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		2FF4ED132008E9380038E9C3 /* Comic Training */ = {
 			isa = PBXGroup;
 			children = (
+				2FE7D907208CD6EE004B0F32 /* Core */,
 				2FF4ED142008E9380038E9C3 /* AppDelegate.swift */,
 				2FF4ED162008E9380038E9C3 /* ViewController.swift */,
 				2FF4ED182008E9380038E9C3 /* Main.storyboard */,
@@ -357,6 +368,7 @@
 			files = (
 				2FFDAB2220374FBD00E6A200 /* heroesResponse.swift in Sources */,
 				2FF4ED172008E9380038E9C3 /* ViewController.swift in Sources */,
+				2FE7D909208CD706004B0F32 /* Request.swift in Sources */,
 				2F571231201B99910095B7EB /* CustomObject.m in Sources */,
 				2FF4ED152008E9380038E9C3 /* AppDelegate.swift in Sources */,
 			);
