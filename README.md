@@ -8,7 +8,7 @@ XCode, Cocoapods and keys to use the Marvel API
 
 ## Authors
 
-* **Matheus Castelo** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Matheus Castelo** - [website](https://mattcbr.github.io)
 
 
 ## Acknowledgments
