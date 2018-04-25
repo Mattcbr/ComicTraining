@@ -22,7 +22,6 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
     
     let r = Request()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,11 +47,13 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
         let destination = segue.destination as! DetailsViewController
         
         let selectedHero: Hero = heroesArray![(selectedIndexPath?.row)!]
+        let testImage = cell.heroImage.image
         
         let backItem = UIBarButtonItem()
         backItem.title = "Home"
         
         destination.hero = selectedHero
+        destination.heroImage = testImage!
         navigationItem.backBarButtonItem = backItem
     }
 

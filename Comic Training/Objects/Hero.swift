@@ -11,12 +11,14 @@ import Foundation
 struct Hero {
     
     let name: String
+    let description: String
     let thumbnailPath: String
     let comicsCount: Int
     let comics: [Comic]
     
-    init(name: String, thumbPath: String, comicsCount: Int, comics: [Comic]) {
+    init(name: String, desc: String, thumbPath: String, comicsCount: Int, comics: [Comic]) {
         self.name = name
+        self.description = desc
         self.comicsCount = comicsCount
         self.thumbnailPath = thumbPath
         self.comics = comics

@@ -25,6 +25,9 @@ class Parser {
             //Colects name of each hero
             let name = newHero["name"] as? String
             
+            //Colects description of each hero
+            let desc = newHero["description"] as? String
+            
             //Colects the image path for each hero
             let thumbnail = newHero["thumbnail"] as? [String : Any]
             let path = thumbnail?["path"] as? String
@@ -45,6 +48,7 @@ class Parser {
             
             //Creates a person and saves it in an array of people
             let hero = Hero(name: name!,
+                            desc: desc!,
                             thumbPath: thumbpath,
                             comicsCount: comicsCount!,
                             comics: comicsArray)
