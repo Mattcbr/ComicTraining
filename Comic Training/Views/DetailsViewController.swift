@@ -28,6 +28,8 @@ class DetailsViewController: UIViewController {
         heroImageView.image = heroImage
         heroDescription.numberOfLines = 0
         
+//        let arraycount = hero.name.
+        
 //        hero.description == "" ? heroDescription.text = "Description not available for this character" : heroDescription.text = hero.description
 
        if hero.description == ""{
@@ -49,14 +51,18 @@ class DetailsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destination as! ResourcesListTableViewController
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Details"
+        
+        destination.hero = hero
+        navigationItem.backBarButtonItem = backItem
     }
-    */
 
 }

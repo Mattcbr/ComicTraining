@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F2C22A6208D05C300AD2998 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C22A5208D05C300AD2998 /* MainCollectionViewController.swift */; };
+		2F7DCCF420911398009F9DCF /* ResourcesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCCF320911398009F9DCF /* ResourcesListTableViewController.swift */; };
 		2F956014208D0A65006DE142 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F956013208D0A65006DE142 /* Parser.swift */; };
 		2F956017208D0AA8006DE142 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F956016208D0AA8006DE142 /* Hero.swift */; };
 		2F956019208D0B0D006DE142 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F956018208D0B0D006DE142 /* Comic.swift */; };
@@ -44,6 +45,7 @@
 		29CE63800046B70B0503CB79 /* Pods_Comic_Training.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comic_Training.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2C22A5208D05C300AD2998 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		2F57122F201B99900095B7EB /* Comic Training-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Comic Training-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F7DCCF320911398009F9DCF /* ResourcesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListTableViewController.swift; sourceTree = "<group>"; };
 		2F956013208D0A65006DE142 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		2F956016208D0AA8006DE142 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		2F956018208D0B0D006DE142 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				2F2C22A5208D05C300AD2998 /* MainCollectionViewController.swift */,
 				2F95601B208D0E8A006DE142 /* MainCollectionViewCell.swift */,
 				2F95601D208D2DD1006DE142 /* DetailsViewController.swift */,
+				2F7DCCF320911398009F9DCF /* ResourcesListTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			files = (
 				2F2C22A6208D05C300AD2998 /* MainCollectionViewController.swift in Sources */,
 				2F95601C208D0E8A006DE142 /* MainCollectionViewCell.swift in Sources */,
+				2F7DCCF420911398009F9DCF /* ResourcesListTableViewController.swift in Sources */,
 				2F956017208D0AA8006DE142 /* Hero.swift in Sources */,
 				2F95601E208D2DD1006DE142 /* DetailsViewController.swift in Sources */,
 				2FE7D909208CD706004B0F32 /* Request.swift in Sources */,
