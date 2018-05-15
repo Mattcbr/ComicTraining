@@ -15,7 +15,6 @@ class DetailsViewController: UIViewController {
             print("Hero set: \(hero.name)")
         }
     }
-    var heroImage = UIImage()
     
     @IBOutlet weak var heroNameLabel: UILabel!
     @IBOutlet weak var heroImageView: UIImageView!
@@ -25,7 +24,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         heroNameLabel.text = hero.name
-        heroImageView.image = heroImage
+        heroImageView.image = hero.thumbnail
         heroDescription.numberOfLines = 0
         
 //        let arraycount = hero.name.

@@ -43,26 +43,6 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
         super.didReceiveMemoryWarning()
     }
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! MainCollectionViewCell
-        var selectedIndexPath = self.collectionView?.indexPath(for: cell)
-        let destination = segue.destination as! DetailsViewController
-        
-        let selectedHero: Hero = heroesArray![(selectedIndexPath?.row)!]
-        let heroImage = cell.heroImage.image
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Home"
-        
-        destination.hero = selectedHero
-        destination.heroImage = heroImage!
-        navigationItem.backBarButtonItem = backItem
-    }
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -84,13 +64,20 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
         cell.imageLoadingIndicatorView.hidesWhenStopped = true
         cell.imageLoadingIndicatorView.startAnimating()
         
-        Alamofire.request((hero.thumbnailPath)).responseImage { response in
-            print("\nImage Request for \(hero.name) Response:\n\(response)")
-            
-            if let image = response.result.value {
-                cell.heroImage.image = image
-                cell.imageLoadingIndicatorView.stopAnimating()
+        if (!hero.hasLoadedImage){
+            Alamofire.request((hero.thumbnailPath)).responseImage { response in
+                print("\nImage Request for \(hero.name) Response:\n\(response)")
+                
+                if let image = response.result.value {
+                    cell.heroImage.image = image
+                    cell.imageLoadingIndicatorView.stopAnimating()
+                    self.heroesArray![indexPath.row].thumbnail = image
+                    self.heroesArray![indexPath.row].hasLoadedImage = true
+                }
             }
+        } else {
+            cell.heroImage.image = hero.thumbnail
+            cell.imageLoadingIndicatorView.stopAnimating()
         }
     
         cell.heroLabel.text = hero.name
@@ -106,36 +93,22 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
     func didFailToLoadHero(withError error: Error) {
         print("Error: \(error)")
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! MainCollectionViewCell
+        var selectedIndexPath = self.collectionView?.indexPath(for: cell)
+        let destination = segue.destination as! DetailsViewController
+        
+        let selectedHero: Hero = heroesArray![(selectedIndexPath?.row)!]
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Home"
+        
+        destination.hero = selectedHero
+        navigationItem.backBarButtonItem = backItem
     }
-    */
 
 }

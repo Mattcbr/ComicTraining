@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Hero {
     
@@ -15,6 +16,8 @@ struct Hero {
     let thumbnailPath: String
     let comicsCount: Int
     let comics: [Comic]
+    var thumbnail: UIImage
+    var hasLoadedImage: Bool
     
     init(name: String, desc: String, thumbPath: String, comicsCount: Int, comics: [Comic]) {
         self.name = name
@@ -22,5 +25,7 @@ struct Hero {
         self.comicsCount = comicsCount
         self.thumbnailPath = thumbPath
         self.comics = comics
+        self.thumbnail = UIImage(named: "Marvel-logo-2")!
+        self.hasLoadedImage = false
     }
 }
