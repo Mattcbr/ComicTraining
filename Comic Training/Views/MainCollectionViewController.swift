@@ -13,10 +13,12 @@ import AlamofireImage
 private let reuseIdentifier = "mainCollectionViewCell"
 
 class MainCollectionViewController: UICollectionViewController, RequestDelegate {
+    @IBOutlet weak var heroesLoadingActivityIndicator: UIActivityIndicatorView!
     
     var heroesArray: [Hero]? {
         didSet {
             self.collectionView?.reloadData()
+            heroesLoadingActivityIndicator.stopAnimating()
         }
     }
     
@@ -28,6 +30,10 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.title = "ComicTraining"
+        
+        heroesLoadingActivityIndicator.hidesWhenStopped = true
+        heroesLoadingActivityIndicator.startAnimating()
+        
         r.delegate = self
         r.requestInfo()
         

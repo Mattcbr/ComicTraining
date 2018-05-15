@@ -27,6 +27,10 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="aAk-xu-Ptq">
+                            <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCollectionViewCell" id="vYA-Oh-Bxf" customClass="MainCollectionViewCell" customModule="Comic_Training" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="150" height="150"/>
@@ -45,6 +49,10 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YzI-E9-a37">
+                                            <rect key="frame" x="65" y="65" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -70,6 +78,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="abS-Zp-Uhe"/>
+                    <connections>
+                        <outlet property="heroesLoadingActivityIndicator" destination="aAk-xu-Ptq" id="BRD-6O-qnW"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBj-jN-44G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
