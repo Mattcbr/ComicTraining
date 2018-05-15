@@ -81,12 +81,15 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
         }
     
         let hero: Hero = (heroesArray![indexPath.row])
+        cell.imageLoadingIndicatorView.hidesWhenStopped = true
+        cell.imageLoadingIndicatorView.startAnimating()
         
         Alamofire.request((hero.thumbnailPath)).responseImage { response in
             print("\nImage Request for \(hero.name) Response:\n\(response)")
             
             if let image = response.result.value {
                 cell.heroImage.image = image
+                cell.imageLoadingIndicatorView.stopAnimating()
             }
         }
     

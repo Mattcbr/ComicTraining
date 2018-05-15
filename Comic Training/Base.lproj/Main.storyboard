@@ -68,6 +68,7 @@
                                 <connections>
                                     <outlet property="heroImage" destination="b69-LG-cgW" id="XVg-9S-Ihb"/>
                                     <outlet property="heroLabel" destination="Ue7-u5-TWu" id="yzZ-lz-mIc"/>
+                                    <outlet property="imageLoadingIndicatorView" destination="YzI-E9-a37" id="9Pm-b6-0gd"/>
                                     <segue destination="2Tt-pp-Ls3" kind="show" id="ZUd-QO-mA7"/>
                                 </connections>
                             </collectionViewCell>

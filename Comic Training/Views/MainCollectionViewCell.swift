@@ -12,5 +12,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var heroImage: UIImageView!
     @IBOutlet weak var heroLabel: UILabel!
+    @IBOutlet weak var imageLoadingIndicatorView: UIActivityIndicatorView!
     
 }
