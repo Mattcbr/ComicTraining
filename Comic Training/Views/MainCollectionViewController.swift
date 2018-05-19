@@ -23,6 +23,7 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
     }
     
     let r = Request()
+    var errorMessage = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,11 +88,16 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
     }
     
     func didLoadHeroes(heroes: [Hero]) {
-        heroesArray = heroes
+        if (heroes.count<1){
+            showSearchErrorAlert()
+        } else {
+            heroesArray = heroes
+        }
     }
     
     func didFailToLoadHero(withError error: Error) {
-        print("Error: \(error)")
+        errorMessage = error.localizedDescription
+        showRequestErrorAlert()
     }
     
     // MARK: - Navigation
@@ -109,6 +115,26 @@ class MainCollectionViewController: UICollectionViewController, RequestDelegate 
         
         destination.hero = selectedHero
         navigationItem.backBarButtonItem = backItem
+    }
+    
+    // MARK: Alert Handling
+    
+    @IBAction func showRequestErrorAlert(){
+        let alert = UIAlertController(title: "Request error", message: "\(errorMessage)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
+            print("Ok pressed")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func showSearchErrorAlert(){
+        let alert = UIAlertController(title: "Error", message: "Sorry, no character to be displayed", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
+            print("Ok pressed")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
